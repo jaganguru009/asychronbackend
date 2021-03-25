@@ -1,0 +1,35 @@
+show db
+show dbs
+show dbs
+show dbs
+collections
+collection
+use UpenCollection
+collections
+collection
+show collection
+db collections
+collection
+show dbs
+collection
+collections
+dbs collections
+db
+show collection
+show collections
+db.upendata.find()
+db.upendata.find().pretty()
+use DataMine
+show dbs
+db
+dbs.DataMine.insertOne({ name:"Upendra " ,age:23 , profession:"student" , skills: fullstack dev})
+dbs.DataMine.insertOne({ name:"Upendra " ,age:23 , profession:"student" , skills:" fullstack dev"})
+db.DataMine.insertOne({ name:"Upendra " ,age:23 , profession:"student" , skills:" fullstack dev"})
+show dbs
+bd
+db
+dbs
+db
+show collections
+db.DataMine.find()
+db.DataMine.find().pretty()

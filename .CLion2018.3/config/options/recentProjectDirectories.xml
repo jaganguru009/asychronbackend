@@ -1,0 +1,56 @@
+<application>
+  <component name="RecentDirectoryProjectsManager">
+    <option name="recentPaths">
+      <list>
+        <option value="$USER_HOME$/AppData/Local/Temp/20191028_141828[1].heic" />
+        <option value="$USER_HOME$/AppData/Local/Temp/bisectional method.txt" />
+        <option value="$USER_HOME$/CLionProjects/untitled" />
+      </list>
+    </option>
+    <option name="openPaths">
+      <list>
+        <option value="$USER_HOME$/AppData/Local/Temp/20191028_141828[1].heic" />
+      </list>
+    </option>
+    <option name="lastPath" value="$USER_HOME$/AppData/Local/Temp/20191028_141828[1].heic" />
+    <option name="pid" value="" />
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/AppData/Local/Temp/20191028_141828[1].heic">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="CL-183.5153.40" />
+              <option name="productionCode" value="CL" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1572441314885" />
+              <option name="buildTimestamp" value="1547052974966" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AppData/Local/Temp/bisectional method.txt">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="CL-183.5153.40" />
+              <option name="productionCode" value="CL" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1553489949305" />
+              <option name="buildTimestamp" value="1547052980477" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/CLionProjects/untitled">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="CL-183.5153.40" />
+              <option name="productionCode" value="CL" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1551888420646" />
+              <option name="buildTimestamp" value="1547053001815" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastProjectLocation" value="$USER_HOME$/CLionProjects" />
+  </component>
+</application>

@@ -1,0 +1,12 @@
+<application>
+  <component name="DimensionService">
+    <location key="WELCOME_SCREEN.0.0.1920.1080@120dpi" x="963" y="456" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080@120dpi" x="581" y="294" />
+    <location key="#C/C++.0.0.1920.1080@120dpi" x="450" y="35" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1080@120dpi" x="255" y="213" />
+    <location key="run.anything.popup.0.0.1920.1080@120dpi" x="531" y="228" />
+    <location key="FileChooserDialogImpl.0.0.1920.1080@120dpi" x="686" y="341" />
+    <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.1920.1080@120dpi" x="608" y="268" />
+    <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1080@120dpi" width="1363" height="698" />
+  </component>
+</application>

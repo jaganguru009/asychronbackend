@@ -1,0 +1,22 @@
+1547553231056
+Literate CoffeeScript￿stub:com.intellij.lang.javascript.types.JSFileElementType,-1373451851￿1547553231055
+XML￿binary stub builder:com.intellij.util.xml.stubs.builder.DomStubBuilder,21￿1547553231054
+Stylus￿stub:org.jetbrains.plugins.stylus.psi.StylusFileElementType,29￿1547553231053
+TypeScript JSX￿stub:com.intellij.lang.javascript.types.JSFileElementType,-1373451851￿1547553231052
+ActionScript￿stub:com.intellij.lang.javascript.types.JSFileElementType,-1373451851￿1547553231051
+JavaScript￿stub:com.intellij.lang.javascript.types.JSFileElementType,-1373451851￿1547553231050
+JSX Harmony￿stub:com.intellij.lang.javascript.types.JSFileElementType,-1373451851￿1547553231049
+GDBCommands￿stub:com.intellij.psi.tree.IStubFileElementType,0￿1547553231048
+PythonStub￿stub:com.jetbrains.python.pyi.PyiFileElementType,69￿1547553231047
+HTML￿stub:com.intellij.psi.tree.IStubFileElementType,0￿1547553231046
+Less￿stub:org.jetbrains.plugins.less.psi.LessFileElementType,29￿1547553231045
+CSS￿stub:com.intellij.psi.css.CssFileElementType,29￿1547553231044
+CoffeeScript￿stub:com.intellij.lang.javascript.types.JSFileElementType,-1373451851￿1547553231043
+TypeScript￿stub:com.intellij.lang.javascript.types.JSFileElementType,-1373451851￿1547553231042
+SQL￿stub:com.intellij.sql.psi.stubs.SqlFileElementType,16￿1547553231041
+Flow￿stub:com.intellij.lang.javascript.types.JSFileElementType,-1373451851￿1547553231040
+LLDBCommands￿stub:com.intellij.psi.tree.IStubFileElementType,0￿1547553231039
+SCSS￿stub:org.jetbrains.plugins.scss.psi.SassScssFileElementType,29￿1547553231038
+ECMAScript 6￿stub:com.intellij.lang.javascript.types.JSFileElementType,-1373451851￿1547553231037
+Sass￿stub:org.jetbrains.plugins.scss.psi.SassScssFileElementType,29￿1547553231036
+Python￿stub:com.jetbrains.python.psi.PyFileElementType,69￿1547553231035
