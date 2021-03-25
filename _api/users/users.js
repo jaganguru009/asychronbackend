@@ -3,7 +3,7 @@ var router = express.Router();
 var async = require('async');
 var appRoot = require('app-root-path'); 
 var userService = require(appRoot + '/services/userService');
-var securedAPI = require(appRoot + '/middleware/securedAPI');  
+var securedAPI = require(appRoot + '/middleware/securedAPI'); 
 
 router.get('/', function (req, res, next) {
   userService.getUsers("users", function (err, results) {

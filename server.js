@@ -16,11 +16,11 @@ app.use(bodyParser.urlencoded({extended:true, limit:'500mb', parameterLimit : 10
 // app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('public'));
-mongoose.connect("mongodb://localhost/asychronDev",{keepAlive:true});
+mongoose.connect("mongodb://localhost:27017/asychronDev",{keepAlive:true});
 
 // logger.info(JSON.stringify(process.env, null, 2))
 
 // route requests by URI root 
 app.use('/api', require('./_api/routes'));
-app.listen(3000); 
+app.listen(3200); 
 module.exports = app
