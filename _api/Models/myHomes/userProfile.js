@@ -49,4 +49,4 @@ var profileSchema= mongoose.Schema(
     }
 )
 
-var Profile = module.exports=mongoose.model('users',profileSchema);
+var Profile = module.exports=mongoose.model('profile',profileSchema);

@@ -43,7 +43,7 @@ var userDetails= mongoose.Schema(
 
         }
 
-    }
+     }
 )
 
-var Details= module.exports=mongoose.model("users",userDetails);
+var Details= module.exports=mongoose.model("details",userDetails);

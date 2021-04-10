@@ -9,6 +9,6 @@ var bankDetails=mongoose.Schema(
             account_no:Number,
         },
         bankId:String
-    }
+     }
 )
-var Bank=module.exports=mongoose.model('users',bankDetails)
+var Bank=module.exports=mongoose.model('banks',bankDetails)

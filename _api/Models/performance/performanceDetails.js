@@ -16,6 +16,6 @@ var mongoose=require("mongoose ")
         hrReview:String,
         teamReview:String,
         performanceReview:Number
-     }
+      }
  )
- var Performance=mongoose.exports=mongoose.model("users",performanceSchema)
+ var Performance=module.exports=mongoose.model("performances",performanceSchema)

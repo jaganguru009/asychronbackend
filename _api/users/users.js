@@ -3,7 +3,7 @@ var router = express.Router();
 var async = require('async');
 var appRoot = require('app-root-path'); 
 var userService = require(appRoot + '/services/userService');
-var securedAPI = require(appRoot + '/middleware/securedAPI'); 
+var securedAPI = require(appRoot + '/middleware/securedAPI');  
 
 router.get('/', function (req, res, next) {
   userService.getUsers("users", function (err, results) {
@@ -21,7 +21,7 @@ router.get('/', function (req, res, next) {
 
 });
 
-// fetch one
+//get assets list  by id 
 router.get('/:id', function (req, res, next) {  
       userService.getUserById(req.params.id, function (err, results) {
         if (err) {
@@ -33,6 +33,12 @@ router.get('/:id', function (req, res, next) {
 
       }) 
 });
+
+
+
+
+
+
 
 
 // create new object

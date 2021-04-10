@@ -7,6 +7,7 @@ var certificateSchema=mongoose.Schema(
         typeCertificate:String,
 
     }
-    )
+     )
 
-    var Certificate =mongoose.exports=mongoose.model("users",certificateSchema)
+    var Certificate =module.exports=mongoose.model("certificates",certificateSchema);
+    

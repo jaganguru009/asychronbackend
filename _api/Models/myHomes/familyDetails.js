@@ -8,7 +8,7 @@ var familySchema=mongoose.Schema(
         address:String,
         phone:Number,
 
-    }
+     }
 )
 
-var Family =mongoose.exports=mongoose.model("users",familySchema)
+var Family =module.exports=mongoose.model("familes",familySchema);

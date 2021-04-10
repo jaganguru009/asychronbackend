@@ -4,7 +4,7 @@ var policiesSchema=mongoose.Schema(
     {
         name:String,
         hrPolicies:String
-    }
+     }
 )
 
-var Policy=mongoose.exports=mongoose.model("users",policiesSchema);
+var Policy=module.exports=mongoose.model("policies",policiesSchema);

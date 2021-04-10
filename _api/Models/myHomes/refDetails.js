@@ -12,7 +12,7 @@ var refDetails=mongoose.Schema(
             email:String,
             mobile:Number,
             company:String
-        }
+         }
     }
 )
-var refernces=mongoose.exports=mongoose.model("User",refDetails)
+var Refernces=module.exports=mongoose.model("refernces",refDetails)

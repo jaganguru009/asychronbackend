@@ -18,7 +18,7 @@ var taskSchema=mongoose.Schema(
         technicalReview:String,
         deployedStatus:Boolean,
 
-    }
+     }
 )
 
-var Task=mongoose.exports=mongoose.model("users",taskSchema)
+var Task=module.exports=mongoose.model("tasks",taskSchema)
