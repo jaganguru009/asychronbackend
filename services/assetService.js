@@ -1,5 +1,5 @@
 const appRoot = require('app-root-path');
-const assetModel = require(appRoot + '/_api/Models/assets/assetModel')
+const assetModel = require(appRoot + '/_api/assets/assetModel')
 
 
 exports.getAssets = (queryString, callback) => {

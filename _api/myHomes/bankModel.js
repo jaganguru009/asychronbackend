@@ -1,6 +1,6 @@
 var mongoose=require("mongoose")
 
-var bankDetails=mongoose.Schema(
+var bankSchema=mongoose.Schema(
     {
         bankAcc:{
             bankName:String,
@@ -11,4 +11,4 @@ var bankDetails=mongoose.Schema(
         bankId:String
      }
 )
-var Bank=module.exports=mongoose.model('banks',bankDetails)
+var Bank=module.exports=mongoose.model('banks',bankSchema)

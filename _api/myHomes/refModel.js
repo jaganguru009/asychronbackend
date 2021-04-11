@@ -1,6 +1,6 @@
 var mongoose =require("mongoose")
 
-var refDetails=mongoose.Schema(
+var refSchema=mongoose.Schema(
     {
         refernces:{
             refId:{
@@ -15,4 +15,4 @@ var refDetails=mongoose.Schema(
          }
     }
 )
-var Refernces=module.exports=mongoose.model("refernces",refDetails)
+var Refernces=module.exports=mongoose.model("refernces",refSchema)

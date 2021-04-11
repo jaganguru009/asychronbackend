@@ -1,6 +1,6 @@
 var mongoose =require("mongoose")
 
-var userDetails= mongoose.Schema(
+var userSchema= mongoose.Schema(
 
     {
         persionalDetails:{
@@ -46,4 +46,4 @@ var userDetails= mongoose.Schema(
      }
 )
 
-var Details= module.exports=mongoose.model("details",userDetails);
+var Details= module.exports=mongoose.model("details",userSchema);
