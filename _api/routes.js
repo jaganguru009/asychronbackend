@@ -7,4 +7,7 @@ router.get('/', function (req, res, next) {
 });
 router.use('/users', require('./users/users')); 
 router.use('/assets',require('./assets/assets'));
+router.use('/leaves',require('./Leaves/leaves'));
+router.use('/forms',require('./forms/forms'));
+
 module.exports = router; 

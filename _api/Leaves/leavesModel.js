@@ -6,8 +6,8 @@ var leavesSchema=mongoose.Schema(
             type:String,
             required:true
         },
-        leavesPriod:{
-            type:Date,
+        leavesPeriod:{
+            type:String, 
             required:true
         },
         reason:{
@@ -18,4 +18,4 @@ var leavesSchema=mongoose.Schema(
 
     }
 )
-var Leave=module.exports=mongoose.Schema("leaves",leavesSchema);
+var Leave=module.exports=mongoose.model("leaves",leavesSchema);

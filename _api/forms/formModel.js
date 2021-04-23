@@ -1,7 +1,8 @@
 var mongoose=require("mongoose")
 
 var formSchema=mongoose.Schema(
-    {   formId:
+    {  
+         formId:
         {
         type:Number,
         required:true
@@ -14,8 +15,8 @@ var formSchema=mongoose.Schema(
             type:String,
              required:true
         },
-        status:String,
-        actions:String
+        status:{type:String},
+        actions:{type:String}
     }
 ) 
 
