@@ -21,7 +21,7 @@ router.get('/', function (req, res, next) {
 
 });
 
-// fetch one
+//get assets list  by id 
 router.get('/:id', function (req, res, next) {  
       userService.getUserById(req.params.id, function (err, results) {
         if (err) {
@@ -33,6 +33,12 @@ router.get('/:id', function (req, res, next) {
 
       }) 
 });
+
+
+
+
+
+
 
 
 // create new object
