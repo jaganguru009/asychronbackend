@@ -5,9 +5,13 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
   res.json('{ "name": "FIVE_BACKEND API", "version": "0.01 Alpha" }');
 });
+
 router.use('/users', require('./users/users')); 
 router.use('/assets',require('./assets/assets'));
 router.use('/leaves',require('./Leaves/leaves'));
 router.use('/forms',require('./forms/forms'));
+router.use('/policies',require('./policies/policy'));
+
+
 
 module.exports = router; 
