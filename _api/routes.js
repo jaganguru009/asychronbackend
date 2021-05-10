@@ -11,6 +11,10 @@ router.use('/assets',require('./assets/assets'));
 router.use('/leaves',require('./Leaves/leaves'));
 router.use('/forms',require('./forms/forms'));
 router.use('/policies',require('./policies/policy'));
+router.use('/performances', require('./performance/performance'));
+router.use('/tasks' ,require('./Tasks/task'));
+
+
 
 
 
