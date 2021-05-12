@@ -1,0 +1,62 @@
+var express = require("express");
+var router = express.Router();
+var appRoot =require('app-root-path');
+var performanceService = require(appRoot +'/services/performanceService')
+
+//get all performances  
+router.get('/',(req,res,next)=>{
+    performanceService.getPerformance("performances",(err,result)=>{
+        if(err){
+            res.status(500).send(err)
+        }else{
+            res.send({'performances':result })
+        }
+    })
+})
+
+//get performances by id
+router.get('/:id',(req,res,next)=>{
+    performanceService.getPerformanceById(req.params.id,(err,result)=>{
+        if(err){
+            res.json(err)
+        }else{
+            res.json(result)
+        }
+    })
+})
+
+
+//create performances 
+router.post('/',(req,res,next)=>{
+    performanceService.postPerformance(req.body,(err,result)=>{
+        if(err){
+            res.json(err)
+        }else{
+            res.json(result)
+        }
+    })
+})
+
+//update performances 
+router.patch('/:id',(req,res,next)=>{
+    performanceService.patchPerformance(req.params.id,req.body,(err,result)=>{
+        if(err){
+            res.json(err)
+        }else{
+            res.json(result)
+        }
+    })
+})
+
+//delete performances 
+router.delete('/:id',(req,res,next)=>{
+    performanceService.deletePerformance(req.params.id,(err,result)=>{
+        if(err){
+            res.json(err)
+        }else{
+            res.json(result)
+        }
+    })
+})
+
+module.exports= router;

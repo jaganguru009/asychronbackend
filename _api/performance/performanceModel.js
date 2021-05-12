@@ -1,21 +1,30 @@
-const { mongo } = require("mongoose")
-var mongoose=require("mongoose ")
+//const { mongooose } = require("mongoose")
+var mongoose=require("mongoose")
 
- var performanceSchema= mongoose.schema(
+ var performanceSchema =mongoose.Schema(
      {
+         
         indicators:
         {
+            escalations:String,
             dues:String,
-            complaint:String,
-            codingStandard:String,
+            compliance:String,
+            codingStandards:String
 
 
         },
-        goals:String,
-        manageReview:String,
+        managerReview:String,
         hrReview:String,
         teamReview:String,
-        performanceReview:Number
+        overallPerformance:String,
+        
+        goals:{
+            technicalGoals:String,
+        managerialGoals:String,
+        hrReview:String,
+        teamGoals:String,
+        feedbackGoals:Number
+        }
       }
  )
  var Performance=module.exports=mongoose.model("performances",performanceSchema)

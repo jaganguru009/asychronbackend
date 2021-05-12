@@ -93,7 +93,7 @@ exports.patchForm = (id, form, callback) => {
                 return;
             }
         }
-    })
+    }) 
 
 }
 
