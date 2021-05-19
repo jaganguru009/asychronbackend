@@ -2,7 +2,7 @@ var mongoose =require("mongoose")
 
 var refSchema=mongoose.Schema(
     {
-        refernces:{
+       
             refId:{
                 type:String,
                 unique:true
@@ -13,6 +13,6 @@ var refSchema=mongoose.Schema(
             mobile:Number,
             company:String
          }
-    }
+    
 )
 var Refernces=module.exports=mongoose.model("refernces",refSchema)

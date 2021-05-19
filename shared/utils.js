@@ -32,6 +32,12 @@ function validateHomeScreen(body)
 {
 	
 }
+
+//email validator 
+ var  validateEmail =function(email){
+    var re= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return re.test(email);
+};
   
  
 module.exports.getRandomString = getRandomString;
@@ -40,3 +46,5 @@ module.exports.getRandomAmount = getRandomAmount;
 module.exports.getDate = getDate;
 module.exports.getShortId = getShortId;
 module.exports.getSixDigitRandomNumber = getSixDigitRandomNumber; 
+
+module.exports.validateEmail =validateEmail;
