@@ -141,6 +141,9 @@ exports.patchUser = function (id, user, callback) {
         }
  
 
+
+
+
 exports.deleteUser = function (id, lastUpdatedBy, callback) {
     userModel.findByIdAndRemove(id, (err, result) => {
         // We'll create a simple object to send back with a message and the id of the document that was removed

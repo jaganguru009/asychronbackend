@@ -1,7 +1,12 @@
 var mongoose=require("mongoose")
-const { default: validator } = require("validator")
+//var validator=require('validator');
+//var validateEmail =require('../../../shared/utils');
 
-var profileSchema= mongoose.Schema(
+
+
+
+var profileSchema=mongoose.Schema(
+
 
     {
         userName:
@@ -18,19 +23,19 @@ var profileSchema= mongoose.Schema(
         email:
         {
             type:String,
-            required:true,
-            unique:[true,"email is already present"],
-            validate(value){
-                if(!validator.isEmail(value)){
-                    throw new Error("invalid emaik ")
-                }
-            }
+           /* trim :true,
+            lowercase:true,
+            unique:true,
+            required:"Email address is reequired",
+            validate:[validateEmail,'please fill a valid email address '],
+            match:[/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,'please fill valid email add'],
+          */
         },
         department:{
             type:String,
             required:true
         },
-        designaton:{
+        designation:{
             type:String,
             required:true
         },
@@ -42,7 +47,7 @@ var profileSchema= mongoose.Schema(
             type:String,
             required:true
         },
-        shift:{
+        shiftEmp:{
             type:Number,
             required:true
         }
