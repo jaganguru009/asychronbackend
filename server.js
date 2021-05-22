@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '500mb', parameterLimit: 
 // app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('public'));
-mongoose.connect("mongodb://localhost/asychronDev", {
+mongoose.connect("mongodb+srv://sa:Reset123@asychrondb.ctra5.mongodb.net/asychronDB?retryWrites=true&w=majority", {
 
     useCreateIndex: true,
     useNewUrlParser: true,
@@ -27,7 +27,7 @@ mongoose.connect("mongodb://localhost/asychronDev", {
 }).then(()=>{
     console.log("connection is succesfully connect ")
 }).catch((e)=>{
-    console.log("no connection")
+    console.log("no connection"+e);
 }) 
 
 // logger.info(JSON.stringify(process.env, null, 2))
