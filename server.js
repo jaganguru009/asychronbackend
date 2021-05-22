@@ -34,5 +34,5 @@ mongoose.connect("mongodb+srv://sa:Reset123@asychrondb.ctra5.mongodb.net/asychro
 
 // route requests by URI root 
 app.use('/api', require('./_api/routes'));
-app.listen(3000);
+app.listen(process.env.PORT || 3000)
 module.exports = app
