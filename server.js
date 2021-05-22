@@ -34,5 +34,10 @@ mongoose.connect("mongodb+srv://sa:Reset123@asychrondb.ctra5.mongodb.net/asychro
 
 // route requests by URI root 
 app.use('/api', require('./_api/routes'));
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 app.listen(process.env.PORT || 3000)
 module.exports = app
