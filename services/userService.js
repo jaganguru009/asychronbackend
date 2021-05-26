@@ -97,16 +97,32 @@ exports.patchUser = function (id, user, callback) {
             return;
         } else { 
                         if (result != null) { 
-                            result.password = user.password || result.password;
+
                             result.name = user.name || result.name;
+                            result.userName = user.userName || result.userName;
+                            result.password = user.password || result.password;
                             result.email = user.email || result.email;
-                            result.phone = user.phone || result.phone;
+                            result.mobile= user.mobile || result.mobile;
+
+                            result.dob = user.dob || result.dob;
+                            result.gender = user.gender || result.gender;
+                            result.bloodGroup = user.bloodGroup || result.bloodGroup;
+                            result.country = user.country || result.country ;
+                            result.maritialStatus = user.maritialStatus || result.maritialStatus;
+                            
+                            result.panCard = user.panCard || result.panCard ;
+                            result.drivingLycence = user.drivingLycence || result.drivingLycence;
+                            result.adharNumber = user.adharNumber || result.adharNumber;
+                            result.skype_id = user.skype_id || result.skype_id;
+                            result.Address = user.Address || result.Address;
+                            result.Linkedin = user.Linkedin || result.Linkedin;
+                            
+
                             result.empCode = user.empCode || result.empCode;
                             result.role = user.role || result.role;
                             result.department = user.department || result.department;
                             result.status = user.status || result.status;
                             result.lastUpdatedBy = user.lastUpdatedBy || result.lastUpdatedBy;
-                            result.service = user.service || result.service;
                             result.FCMToken = user.FCMToken || result.FCMToken;
                             //result.FCMToken = (user.FCMToken!=undefined) ? user.FCMToken:result.FCMToken;
                             result.isLoggedIn = (user.isLoggedIn != undefined) ? user.isLoggedIn : result.isLoggedIn;
@@ -142,7 +158,7 @@ exports.patchUser = function (id, user, callback) {
  
 
 
-
+ 
 
 exports.deleteUser = function (id, lastUpdatedBy, callback) {
     userModel.findByIdAndRemove(id, (err, result) => {

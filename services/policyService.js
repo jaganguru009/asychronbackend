@@ -53,12 +53,14 @@ exports.postPolicy=(policy,callback)=>{
                 }
                 callback(null,err);
                 return;
-            }else{
+            }
+        }
+        else{
                 callback(null,createdPolicy);
                 console.log("successfully create your policy")
                 return;
             }
-        }
+        
     })
    
     }

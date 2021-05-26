@@ -52,11 +52,12 @@ exports.postDetails = (detail, callback) => {
                 callback(null, err);
                 return;
             }
+        }
             else {
                 callback(null, createdDetail);
                 return;
             }
-        }
+        
     })
 
 }

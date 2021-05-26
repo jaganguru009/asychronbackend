@@ -29,7 +29,7 @@ router.get("/:id", (req, res, next) => {
 
 //create forms 
 router.post('/', (req, res, next) => {
-    formService.postForm(req.body, (err, result) => {
+    formService.postForm(req.body,(err, result) => {
         if (err) {
             res.json(err);
         } else {
@@ -52,7 +52,7 @@ router.patch('/:id', (req, res, next) => {
 
 //delete form 
 router.delete("/:id", (req, res, next) => {
-    formService.deleteForm(req.params.id, (err, result) => {
+    formService.deleteForm(req.params.id,(err, result) => {
         if (err) {
             res.json(err)
         } else {

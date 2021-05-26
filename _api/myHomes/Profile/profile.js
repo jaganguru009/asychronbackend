@@ -49,7 +49,7 @@ router.post('/',(req,res,next)=>{
 
 //update (patch ) profile
 router.patch('/:id',(req,res,next)=>{
-    profileService.patchProfile(req.body,req.params.id,(err,results)=>{
+    profileService.patchProfile(req.params.id,req.body,(err,results)=>{
         if(err){
             res.json(err);
 

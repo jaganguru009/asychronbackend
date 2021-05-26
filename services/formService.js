@@ -54,7 +54,8 @@ exports.postForm = (form, callback) => {
             callback(null, err);
             return;
         } else {
-            callback(null, createdForm)
+            callback(null, createdForm);
+            return;
         }
     })
 
@@ -100,7 +101,7 @@ exports.patchForm = (id, form, callback) => {
 
 //delete formss 
 exports.deleteForm = (id, callback) => {
-    formModel.findByIdAndRemove(id, formId,(err, result) => {
+    formModel.findByIdAndRemove(id,(err, result) => {
         if (err) {
             callback(null, err);
             return;
