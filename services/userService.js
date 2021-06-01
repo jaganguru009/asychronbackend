@@ -60,7 +60,7 @@ exports.postUser = function (user, callback) {
     }
     );
 }
-exports.isUserValidated = function (user, callback) {
+exports.signIn = function (user, callback) {
     userModel.find({
         $and: [
             { $and: [{ userName: user.userName }] },
@@ -68,7 +68,7 @@ exports.isUserValidated = function (user, callback) {
         ]
     }, function (err, results) {
         if (err) {
-            console.log("error occured while searching user ");
+            callback(null, err);
         }
         else {
             if (results.length > 0) {

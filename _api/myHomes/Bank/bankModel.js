@@ -7,7 +7,8 @@ var bankSchema=mongoose.Schema(
             ifscCode:String,
             branchName:String,
             accountNum:Number,
-             bankId:String
+             bankId:String,
+             userName:String
      }
 )
 var Bank=module.exports=mongoose.model('banks',bankSchema)

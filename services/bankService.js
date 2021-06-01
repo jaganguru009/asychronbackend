@@ -39,6 +39,20 @@ exports.getDetailsById = (id,callback) => {
     })
 }
 
+exports.getDetailsByUserName =  (userName, callback) =>{ 
+    bankModel.find().where('userName').equals(userName).exec((err, details) => {
+            if (err) {
+                // Note that this error doesn't mean nothing was found,
+                // it means the database had an error while searching, hence the 500 status
+                callback(null, err);
+                return;
+            } else {
+                //console.log("order by agent & status " + JSON.stringify(orders));
+                callback(null, details);
+                return;
+            }
+        });
+}
 //post create bank detail 
 exports.postDetails = (detail, callback) => {
     console.log("createdDetail..!1111" )

@@ -7,14 +7,26 @@ var router = express.Router()
 
 //get bank details
 
-router.get('/', (req, res, next) => {
-    bankService.getDetails("Details", (err, result) => {
-        if (err) {
-            res.status(500).send(err);
-        } else {
-            res.send({ 'Details': result });
-        }
-    })
+router.get('/', (req, res, next) => { 
+    if (req.query.userName != undefined) {
+        bankService.getDetailsByUserName(req.query.userName, (err, result) => {
+            if (err) {
+                res.status(500).send(err);
+            } else {
+                res.send({ 'Details': result });
+            }
+        })
+    }
+    else {
+        bankService.getDetails("Details", (err, result) => {
+            if (err) {
+                res.status(500).send(err);
+            } else {
+                res.send({ 'Details': result });
+            }
+        })
+    }
+
 })
 
 //get bank details by id 
@@ -33,7 +45,6 @@ router.get('/:id', (req, res, next) => {
 
 //post bank details
 router.post('/', (req, res, next) => {
- console.log(JSON.stringify(req.body))
     bankService.postDetails(req.body, (err, result) => {
 
         if (err) {
@@ -46,7 +57,7 @@ router.post('/', (req, res, next) => {
 
 //update details 
 router.patch('/:id', (req, res, next) => {
-    
+
     bankService.patchDetail(req.params.id, req.body, (err, result) => {
         if (err) {
             res.json(err);
@@ -59,7 +70,7 @@ router.patch('/:id', (req, res, next) => {
 
 //delete bankdetails 
 router.delete('/:id', (req, res, next) => {
-    
+
     bankService.deleteDetails(req.params.id, (err, result) => {
         if (err) {
             res.json(err);
