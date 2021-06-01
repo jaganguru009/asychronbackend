@@ -54,8 +54,7 @@ exports.getDetailsByUserName =  (userName, callback) =>{
         });
 }
 //post create bank detail 
-exports.postDetails = (detail, callback) => {
-    console.log("createdDetail..!1111" )
+exports.postDetails = (detail, callback) => { 
     bankModel.create(detail, (err, createdDetail) => {
         if (err) {
             if (err.code === 11000) {
@@ -80,8 +79,7 @@ exports.postDetails = (detail, callback) => {
 }
 
 //patch details
-exports.patchDetail = (id, detail, callback) => {
-    console.log("id=" + id)
+exports.patchDetail = (id, detail, callback) => { 
     bankModel.findById(id, (err, result) => {
         if (err) {
             callback(null, err);

@@ -7,7 +7,7 @@ var router = express.Router()
 
 //get bank details
 
-router.get('/', (req, res, next) => { 
+router.get('/', (req, res, next) => {
     if (req.query.userName != undefined) {
         bankService.getDetailsByUserName(req.query.userName, (err, result) => {
             if (err) {
@@ -45,12 +45,30 @@ router.get('/:id', (req, res, next) => {
 
 //post bank details
 router.post('/', (req, res, next) => {
-    bankService.postDetails(req.body, (err, result) => {
-
+    bankService.getDetailsByUserName(req.body.userName, (err, result) => {
         if (err) {
-            res.json(err);
+            res.status(500).send(err);
         } else {
-            res.json(result);
+            if (result.length > 0) {
+                console.log(JSON.stringify(result))
+                bankService.patchDetail(result[0]._id, req.body, (err, result) => {
+                    if (err) {
+                        res.json(err);
+                    } else {
+                        res.json(result);
+                    }
+                })
+            } else {
+
+                bankService.postDetails(req.body, (err, result) => {
+
+                    if (err) {
+                        res.json(err);
+                    } else {
+                        res.json(result);
+                    }
+                })
+            }
         }
     })
 })
