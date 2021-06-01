@@ -41,6 +41,7 @@ exports.getDetailsById = (id,callback) => {
 
 //post create bank detail 
 exports.postDetails = (detail, callback) => {
+    console.log("createdDetail..!1111" )
     bankModel.create(detail, (err, createdDetail) => {
         if (err) {
             if (err.code === 11000) {
@@ -52,10 +53,13 @@ exports.postDetails = (detail, callback) => {
                 callback(null, err);
                 return;
             }
-            else {
-                callback(null, createdDetail);
+            else { 
+                callback(null, err);
                 return;
             }
+        }else
+        {
+            callback(null, createdDetail);
         }
     })
 

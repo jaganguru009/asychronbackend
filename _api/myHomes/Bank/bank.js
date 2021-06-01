@@ -33,7 +33,7 @@ router.get('/:id', (req, res, next) => {
 
 //post bank details
 router.post('/', (req, res, next) => {
-
+ console.log(JSON.stringify(req.body))
     bankService.postDetails(req.body, (err, result) => {
 
         if (err) {

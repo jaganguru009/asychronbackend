@@ -34,6 +34,15 @@ mongoose
       keepAlive: true,
     },
   )
+ /* mongoose.connect("mongodb://localhost/asychronDev", {
+
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify:true,
+    keepAlive: true
+
+})*/
   .then(() => {
     console.log('connection is succesfully connect ');
   })
