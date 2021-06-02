@@ -1,77 +1,127 @@
-var mongoose=require('mongoose');
+var mongoose = require('mongoose');
 
-var userSchema=mongoose.Schema(
+var userSchema = mongoose.Schema(
     {
+
+
+        name:
+        {
+            firstName: String,
+            lastName: String
+        },
+
         userName:
         {
-            type:String,
-            required:true
+            type: String,
+            required: true,
+            unique: [true, "this is already exit"]
         },
         password:
         {
-            type:String,
-            required:true
+            type: String,
+            required: true
         },
-        name:
-        {
-            type:String,
-            required:true
-        },
+        
+
+       
         email:
         {
-            type:String,
-            required:true
+            type: String,
+            required: true,
+            unique: [true, "this is already exit"]
         },
-        phone:
+
+        mobile:
         {
-            type:Number,
-            required:true
+            type: Number,
+            required: true,
+            maxlength: 11,
         },
+
+
+        persionalDetails: {
+
+            dob: Date,
+            gender: String,
+            bloodGroup: String,
+            country: String,
+            maritialStatus: String,
+        },
+
+        panCard:
+        {
+            type: String,
+            required: true
+        },
+
+        drivingLycence: {
+            type: String
+        },
+
+        adharNumber: { 
+            type: Number
+        },
+
+
+        skype_id: {
+            type: Number,
+            required: true,
+            unique: [true, "this is already exit"]
+
+        },
+        Address: {
+            permanantAdd: String,
+            currentAdd: String
+        },
+
+        Linkedin: {
+            type: String
+        },
+
+
         empCode:
         {
-            type:String,
-            required:true
+            type: String,
         },
         role:
         {
-            roleId:String,
-            roleName:String
+            roleId: String,
+            roleName: String
         },
         department:
         {
-            departmentId:String,
-            departmentName:String
+            departmentId: String,
+            departmentName: String
         },
-        isLoggedIn:Boolean,
+        isLoggedIn: Boolean,
         status:
         {
-            type:Boolean,
-            required:true
+            type: Boolean,
+            required: true
         },
-        family:
-        {   familyId:String 
-        },
-        FCMToken:String,
+
+        FCMToken: String,
+
         created:
         {
-            type:Date,
-            default:Date.now
+            type: Date,
+            default: Date.now
         },
         lastUpdated:
         {
-            type:Date 
+            type: Date
         },
         createdBy:
         {
-            type:String,
-            required:true
+            type: String,
+            required: true
         },
         lastUpdatedBy:
         {
-            type:String,
-            required:true
+            type: String,
+            required: true
         }
     }
 );
 
-var User=module.exports=mongoose.model('users',userSchema);
+var User = module.exports = mongoose.model('users', userSchema);

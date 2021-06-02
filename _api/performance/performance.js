@@ -7,23 +7,25 @@ var performanceService = require(appRoot +'/services/performanceService')
 router.get('/',(req,res,next)=>{
     performanceService.getPerformance("performances",(err,result)=>{
         if(err){
-            res.status(500).send(err)
+
+            res.status(500).send(err);
         }else{
-            res.send({'performances':result })
+            res.send({'performances':result });
         }
-    })
-})
+    });
+});
 
 //get performances by id
 router.get('/:id',(req,res,next)=>{
+
     performanceService.getPerformanceById(req.params.id,(err,result)=>{
         if(err){
             res.json(err)
         }else{
-            res.json(result)
+            res.json(result);
         }
     })
-})
+});
 
 
 //create performances 
@@ -47,7 +49,7 @@ router.patch('/:id',(req,res,next)=>{
         }
     })
 })
-
+ 
 //delete performances 
 router.delete('/:id',(req,res,next)=>{
     performanceService.deletePerformance(req.params.id,(err,result)=>{

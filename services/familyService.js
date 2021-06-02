@@ -54,11 +54,12 @@ exports.postFamily = (family, callback) => {
                 }
                 callback(null, err);
                 return;
-            } else {
+            }
+         } else {
                 callback(null, createdFamily);
                 return;
             }
-        }
+        
     })
 }
 
@@ -67,7 +68,8 @@ exports.patchFamily = (id, family, callback) => {
     console.log("id=" + id)
     familyModel.findById(id, (err, result) => {
         if (err) {
-            callback()
+            callback(err);
+            return;
         } else {
             if (result != null) {
                 result.name = family.name || result.name
@@ -108,7 +110,11 @@ exports.deleteFamily=(id,callback)=>{
             callback(null,response);
             return;
             }else{
-                callback(null,result);
+                let response = {
+                    message: " successfully deleted family data",
+                    id: result._id
+                };
+                callback(null, response);
                 return;
             }
         }

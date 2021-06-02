@@ -78,7 +78,7 @@ exports.patchProfile = (id, profile, callback) => {
                 result.employeType = profile.employeType || result.employeType;
                 result.shiftEmp = profile.shiftEmp || result.shiftEmp;
                 result.doj = profile.doj || result.doj;
-                result.lastUpdatedBy = Date.now();
+               // result.lastUpdatedBy = Date.now();
 
                 //save updated data in profile 
                 result.save((err, result) => {
