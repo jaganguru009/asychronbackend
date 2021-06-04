@@ -7,6 +7,7 @@ var familySchema=mongoose.Schema(
         relationship:String,
         address:String,
         phone:Number,
+        userName:String
 
      }
 )

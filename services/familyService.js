@@ -44,6 +44,23 @@ exports.getFamilyById = (id, callback) => {
     })
 }
 
+exports.getFamilyByUserName =  (userName, callback) =>{ 
+    familyModel.find().where('userName').equals(userName).exec((err, family) => {
+            if (err) {
+                callback(null, err);
+                return;
+            } else {
+                //console.log("order by agent & status " + JSON.stringify(orders));
+                callback(null, family);
+                return;
+            }
+        });
+}
+
+
+
+
+
 //post family details
 exports.postFamily = (family, callback) => {
     familyModel.create(family, (err, createdFamily) => {

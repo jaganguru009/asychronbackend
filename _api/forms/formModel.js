@@ -1,23 +1,21 @@
-var mongoose=require("mongoose")
+var mongoose = require("mongoose");
 
-var formSchema=mongoose.Schema(
-    {  
-         formId:
-        {
-        type:Number,
-        required:true
-        },
-        formName:{
-             type:String,
-             required:true
-        },
-        formType:{
-            type:String,
-             required:true
-        },
-        status:{type:String},
-        actions:{type:String}
-    }
-) 
+var formSchema = mongoose.Schema({
+  formId: {
+    type: Number,
+    required: true,
+  },
+  formName: {
+    type: String,
+    required: true,
+  },
+  formType: {
+    type: String,
+    required: true,
+  },
+  status: { type: String },
+  actions: { type: String },
+  userName: String,
+});
 
-var Form=module.exports=mongoose.model('forms',formSchema);
+var Form = (module.exports = mongoose.model("forms", formSchema));

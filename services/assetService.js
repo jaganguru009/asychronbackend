@@ -44,6 +44,23 @@ exports.getAssets = (queryString, callback) => {
 
 } 
 
+//get asset by userName 
+exports.getAssetByUserName =  (userName, callback) =>{ 
+    assetModel.find().where('userName').equals(userName).exec((err, asset) => {
+            if (err) {
+                callback(null, err);
+                return;
+            } else {
+                //console.log("order by agent & status " + JSON.stringify(orders));
+                callback(null, asset);
+                return;
+            }
+        });
+}
+
+
+
+
 exports.postAsset = (asset, callback) => {
     assetModel.create(asset, (err, createdAsset) => {
         if (err) {
