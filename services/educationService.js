@@ -38,6 +38,22 @@ exports.getEduDetailById = (id, callback) => {
 
 }
 
+
+//get education by userName 
+exports.getEduDetailByUserName=(userName,callback)=>{
+    educationModel.find().where('userName').equals(userName).exec((err,eduDetails)=>{
+      if(err){
+        callback(null,err);
+        return;
+      }else{
+        callback(null,eduDetails);
+        return;
+      }
+    })
+  }
+  
+  
+
 //post education detail 
 exports.postEduDetail = (edudetail, callback) => {
     educationModel.create(edudetail, (err, createdEdu) => {
@@ -70,7 +86,7 @@ exports.patchEduDetail=(id,education,callback)=>{
             if(result != null){
                     result.degree   = education.degree ||result.degree
                     result.specialization = education.specialization || result.specialization
-                    result.qualification =education.qualification || result.qualification
+                    result.college =education.college || result.college
                     result.board        = education.board || result.board
                     result.datePassing  =education.datePassing || result.datePassing
                     result.percentage   = education.percentage || result.percentage

@@ -17,6 +17,21 @@ exports.getForms = (querystring, callback) => {
 
 }
 
+//get bby username
+exports.getFormByUserName =  (userName, callback) =>{ 
+    formModel.find().where('userName').equals(userName).exec((err, form) => {
+            if (err) {
+                callback(null, err);
+                return;
+            } else {
+                //console.log("order by agent & status " + JSON.stringify(orders));
+                callback(null, form);
+                return;
+            }
+        });
+}
+
+
 
 //get forms by id from db
 exports.getFormsById = (id, callback) => {

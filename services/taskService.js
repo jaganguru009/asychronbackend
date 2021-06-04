@@ -36,17 +36,33 @@ exports.getTaskById = (id, callback) => {
   });
 };
 
+exports.getTaskByUserName = (userName, callback) => {
+  taskModel
+    .find()
+    .where("userName")
+    .equals(userName)
+    .exec((err, Task) => {
+      if (err) {
+        callback(null, err);
+        return;
+      } else {
+        //console.log("order by agent & status " + JSON.stringify(orders));
+        callback(null, Task);
+        return;
+      }
+    });
+};
+
 //create task
 
 exports.postTask = (task, callback) => {
   taskModel.create(task, (err, createdTask) => {
     if (err) {
-       if (err.code === 11000) {
-           err = {
-              "errorType": "already assigned  this task ",
-
-           }
-       }
+      if (err.code === 11000) {
+        err = {
+          errorType: "already assigned  this task ",
+        };
+      }
       callback(null, err);
       return;
     } else {
@@ -110,7 +126,7 @@ exports.updateTask = (id, task, callback) => {
             callback(null, result);
             console.log("succesfully update your data");
             return;
-          } 
+          }
         });
       } else {
         let msg = { error: "No any task for you " };

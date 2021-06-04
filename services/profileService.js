@@ -36,6 +36,22 @@ exports.getProfileById = (id, callback) => {
         }
     })
 }
+//get profile by username
+
+exports.getProfileByUserName =  (userName, callback) =>{ 
+    profileModel.find().where('userName').equals(userName).exec((err, profile) => {
+            if (err) {
+                callback(null, err);
+                return;
+            } else {
+                //console.log("order by agent & status " + JSON.stringify(orders));
+                callback(null, profile);
+                return;
+            }
+        });
+}
+
+
 
 //create  profile 
 exports.postProfile = (profile, callback) => {
@@ -133,27 +149,3 @@ exports.deleteProfile = (id, lastUpdatedBy, callback) => {
     })
 }
 
-//get profile by userName 
-exports.getProfileByUserName = (profile, callback) => {
-    profileModel.find().where('userName').equals(userName).exec((err, profiles) => {
-        if (err) {
-            callback(null, err);
-            return;
-            //this err means err while serarching in db so 500 status 
-        } else {
-            var userIds = [];
-
-            if (profiles.length > 0) {
-
-                callback(null, profiles[0]);
-                return;
-
-            } else {
-
-                callback(null, []);
-                return;
-            }
-        }
-    })
-
-}

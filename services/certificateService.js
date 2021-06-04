@@ -38,6 +38,21 @@ exports.getCertificateById = (id, callback) => {
 
 }
 
+//get certificate bby username
+exports.getCertificateByUserName =  (userName, callback) =>{ 
+    certificateModel.find().where('userName').equals(userName).exec((err, certificates) => {
+            if (err) {
+                callback(null, err);
+                return;
+            } else {
+                //console.log("order by agent & status " + JSON.stringify(orders));
+                callback(null, certificates);
+                return;
+            }
+        });
+}
+
+
 //post certificate 
 exports.postCertificate = (certificate, callback) => {
     certificateModel.create(certificate, (err, createdCert) => {

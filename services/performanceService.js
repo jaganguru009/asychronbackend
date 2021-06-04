@@ -38,13 +38,39 @@ exports.getPerformanceById = (id, callback) => {
     }
   });
 };
+// performance by userName 
+exports.getPerformanceByUserName = (userName, callback) => {
+  performanceModel
+    .find()
+    .where("userName")
+    .equals(userName)
+    .exec((err, performances) => {
+      if (err) {
+        callback(null, err);
+        return;
+      } else {
+        //console.log("order by agent & status " + JSON.stringify(orders));
+        callback(null, performances);
+        return;
+      }
+    });
+};
 
 //create perfomances
 exports.postPerformance = (performance, callback) => {
   performanceModel.create(performance, (err, createdPerformance) => {
     if (err) {
-      callback(null, err);
-      return;
+      if (err.code === 11000) {
+        err = {
+          errType: "duplicate entry",
+        };
+
+        callback(null, err);
+        return;
+      } else {
+        callback(null, err);
+        return;
+      }
     } else {
       callback(null, createdPerformance);
       return;
@@ -95,7 +121,7 @@ exports.patchPerformance = (id, performance, callback) => {
             );
             return;
           }
-        }); 
+        });
       } else {
         let msg = { err: "no performance  found here" };
         callback(null, msg);

@@ -40,6 +40,23 @@ exports.getPolicyById=(id,callback)=>{
 
     })
 }
+//ppolicy by userName
+exports.getPolicyByUserName =  (userName, callback) =>{ 
+    policiesModel.find().where('userName').equals(userName).exec((err, policies) => {
+            if (err) {
+                callback(null, err);
+                return;
+            } else {
+                //console.log("order by agent & status " + JSON.stringify(orders));
+                callback(null,policies);
+                return;
+            }
+        });
+}
+
+
+
+
 
 //create policy in application 
 exports.postPolicy=(policy,callback)=>{

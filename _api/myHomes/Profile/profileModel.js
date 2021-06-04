@@ -9,12 +9,7 @@ var profileSchema=mongoose.Schema(
 
 
     {
-        userName:
-        {
-            type:String,
-            required:true
-
-        },
+        userName:String,
         empCode:
         {
             type:String,

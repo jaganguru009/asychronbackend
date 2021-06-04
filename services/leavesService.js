@@ -50,6 +50,24 @@ exports.getLeavesById = (id, callback) => {
 
 }
 
+//get by username
+exports.getLeaveByUserName =  (userName, callback) =>{ 
+    leavesModel.find().where('userName').equals(userName).exec((err, leaves) => {
+            if (err) {
+                callback(null, err);
+                return;
+            } else {
+                //console.log("order by agent & status " + JSON.stringify(orders));
+                callback(null, leaves);
+                return;
+            }
+        });
+}
+
+
+
+
+
 // create leaves application for employe
 
 exports.postLeave = (leave, callback) => {

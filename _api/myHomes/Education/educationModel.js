@@ -4,10 +4,11 @@ var educationSchema=mongoose.Schema(
     {
          degree:String,
          specialization:String,
-         qualification:String,
+         college:String,
          board:String,
          datePassing:Date,
-         percentage:Number
+         percentage:Number,
+         userName:String
 
 
      }

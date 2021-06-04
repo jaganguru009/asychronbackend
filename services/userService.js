@@ -40,6 +40,23 @@ exports.getUserById = function (id, callback) {
     });
 }
 
+// get by username
+exports.getUserByUserName =  (userName, callback) =>{ 
+    userModel.find().where('userName').equals(userName).exec((err, users) => {
+            if (err) {
+                callback(null, err);
+                return;
+            } else {
+                //console.log("order by agent & status " + JSON.stringify(orders));
+                callback(null, users);
+                return;
+            }
+        });
+}
+
+
+
+//post user
 exports.postUser = function (user, callback) {
     userModel.create(user, function (err, createdUser) {
         if (err) {
@@ -60,7 +77,7 @@ exports.postUser = function (user, callback) {
     }
     );
 }
-exports.signIn = function (user, callback) {
+exports.isUserValidated = function (user, callback) {
     userModel.find({
         $and: [
             { $and: [{ userName: user.userName }] },
@@ -68,7 +85,7 @@ exports.signIn = function (user, callback) {
         ]
     }, function (err, results) {
         if (err) {
-            callback(null, err);
+            console.log("error occured while searching user ");
         }
         else {
             if (results.length > 0) {

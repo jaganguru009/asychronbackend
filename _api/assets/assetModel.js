@@ -12,7 +12,8 @@ var assetSchema=mongoose.Schema(
         },
         issueDate:{
             type:Date
-        }
+        },
+        userName:String
     }
 )
 var Asset=module.exports=mongoose.model('assets',assetSchema)

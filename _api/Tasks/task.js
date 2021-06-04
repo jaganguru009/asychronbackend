@@ -5,13 +5,23 @@ const taskService = require(appRoot + "/services/taskService");
 
 //get all task
 router.get("/", (req, res, next) => {
-  taskService.getTask("tasks", (err, result) => {
-    if (err) {
-      res.status(500).send(err);
-    } else {
-      res.send({ tasks: result });
-    }
-  });
+  if (req.query.userName != undefined) {
+    taskService.getTaskByUserName(req.query.userName, (err, result) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.send({ Task: result });
+      }
+    });
+  } else {
+    taskService.getTask("tasks", (err, result) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.send({ tasks: result });
+      }
+    });
+  }
 });
 
 //get all tasks by id
@@ -25,18 +35,34 @@ router.get("/:id", (req, res, next) => {
   });
 });
 
-//create new task
-
+// post by username
 router.post("/", (req, res, next) => {
-  
-  taskService.postTask(req.body, (err, results) => {
+  taskService.getTaskByUserName(req.body.userName, (err, result) => {
     if (err) {
-      res.json(err);
+      res.status(500).send(err);
     } else {
-      res.json(results);
+      if (result.length > 0) {
+        console.log(JSON.stringify(result));
+        taskService.updateTask(result[0]._id, req.body, (err, result) => {
+          if (err) {
+            res.json(err);
+          } else {
+            res.json(result);
+          }
+        });
+      } else {
+        taskService.postTask(req.body, (err, result) => {
+          if (err) {
+            res.json(err);
+          } else {
+            res.json(result);
+          }
+        });
+      }
     }
   });
 });
+
 
 //patch update task
 
@@ -48,7 +74,7 @@ router.patch("/:id", (req, res) => {
       res.json(result);
     }
   });
-}); 
+});
 
 //delete task from list
 

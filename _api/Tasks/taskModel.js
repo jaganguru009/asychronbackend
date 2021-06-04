@@ -1,7 +1,8 @@
 var mongoose = require("mongoose")
 
 var taskSchema = mongoose.Schema(
-    { 
+    {   
+        userName:String,
         taskId: Number,
         description: String,
         title: String,
