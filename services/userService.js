@@ -61,7 +61,7 @@ exports.postUser = function (user, callback) {
     userModel.create(user, function (err, createdUser) {
         if (err) {
             if (err.code === 11000) {
-                err = {
+                errCustom = {
                     "errorType": "Duplicate UserName",
                     "errorText": "Same user name is available in the database,try new one"
                 }
@@ -129,8 +129,7 @@ exports.patchUser = function (id, user, callback) {
                             
                             result.panCard = user.panCard || result.panCard ;
                             result.drivingLycence = user.drivingLycence || result.drivingLycence;
-                            result.adharNumber = user.adharNumber || result.adharNumber;
-                            result.skype_id = user.skype_id || result.skype_id;
+                            result.adharNumber = user.adharNumber || result.adharNumber; 
                             result.Address = user.Address || result.Address;
                             result.Linkedin = user.Linkedin || result.Linkedin;
                             

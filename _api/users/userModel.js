@@ -14,7 +14,7 @@ var userSchema = mongoose.Schema(
         {
             type: String,
             required: true,
-            unique: [true, "this is already exit"]
+            unique: [true, "this is already exists"]
         },
         password:
         {
@@ -28,7 +28,7 @@ var userSchema = mongoose.Schema(
         {
             type: String,
             required: true,
-            unique: [true, "this is already exit"]
+            unique: [true, "this is already exist"]
         },
 
         mobile:
@@ -50,8 +50,7 @@ var userSchema = mongoose.Schema(
 
         panCard:
         {
-            type: String,
-            required: true
+            type: String 
         },
 
         drivingLycence: {
@@ -61,14 +60,7 @@ var userSchema = mongoose.Schema(
         adharNumber: { 
             type: Number
         },
-
-
-        skype_id: {
-            type: Number,
-            required: true,
-            unique: [true, "this is already exit"]
-
-        },
+ 
         Address: {
             permanantAdd: String,
             currentAdd: String

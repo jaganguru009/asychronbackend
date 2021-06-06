@@ -26,16 +26,9 @@ var userSchema = mongoose.Schema(
         contactDetails: {
             mobile:
             {
-                type: Number,
-                required: true,
-                maxlength: 11,
+                type: Number 
             },
-            skype_id: {
-                type: Number,
-                required: true,
-                unique: [true, "this is already exit"]
-
-            },
+            
             persionalAdd: String,
             currentAdd: String,
             Linkedin: String,
