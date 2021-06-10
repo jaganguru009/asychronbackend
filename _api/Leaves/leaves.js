@@ -41,16 +41,6 @@ router.post("/", (req, res, next) => {
       if (err) {
         res.status(500).send(err);
       } else {
-        if (result.length > 0) {
-          console.log(JSON.stringify(result));
-          leavesService.patchLeave(result[0]._id, req.body, (err, result) => {
-            if (err) {
-              res.json(err);
-            } else {
-              res.json(result);
-            }
-          });
-        } else {
           leavesService.postLeave(req.body, (err, result) => {
             if (err) {
               res.json(err);
@@ -59,9 +49,9 @@ router.post("/", (req, res, next) => {
             }
           });
         }
-      }
+      })
     });
-  });
+
   
 
 

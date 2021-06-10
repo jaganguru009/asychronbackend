@@ -89,7 +89,7 @@ exports.patchProfile = (id, profile, callback) => {
                 result.email = profile.email || result.email;
                 result.deparatment = profile.deparatment || result.deparatment;
                 result.designation = profile.designation || result.designation;
-
+                result.reportManeger = profile.reportManeger ||  result.reportManeger;
 
                 result.employeType = profile.employeType || result.employeType;
                 result.shiftEmp = profile.shiftEmp || result.shiftEmp;

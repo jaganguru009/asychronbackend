@@ -45,21 +45,7 @@ router.post("/", (req, res, next) => {
     (err, result) => {
       if (err) {
         res.status(500).send(err);
-      } else {
-        if (result.length > 0) {
-          console.log(JSON.stringify(result));
-          performanceService.patchPerformance(
-            result[0]._id,
-            req.body,
-            (err, result) => {
-              if (err) {
-                res.json(err);
-              } else {
-                res.json(result);
-              }
-            }
-          );
-        } else {
+      }  else {
           performanceService.postPerformance(req.body, (err, result) => {
             if (err) {
               res.json(err);
@@ -68,10 +54,8 @@ router.post("/", (req, res, next) => {
             }
           });
         }
-      }
-    }
-  );
-});
+      })
+    });
 
 //update performances
 router.patch("/:id", (req, res, next) => {
