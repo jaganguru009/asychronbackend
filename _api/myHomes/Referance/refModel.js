@@ -3,8 +3,7 @@ var mongoose = require("mongoose");
 var refSchema = mongoose.Schema({
   userName: String,
   refId: {
-    type: String,
-    unique: true,
+    type: String 
   },
   name: String,
   title: String,
