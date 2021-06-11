@@ -4,11 +4,6 @@ var userSchema = mongoose.Schema(
     {
 
 
-        name:
-        {
-            firstName: String,
-            lastName: String
-        },
 
         userName:
         {
@@ -16,82 +11,66 @@ var userSchema = mongoose.Schema(
             required: true,
             unique: [true, "this is already exists"]
         },
-        password:
-        {
-            type: String,
-            required: true
-        },
+      
         
-
-       
-        email:
-        {
-            type: String,
-            required: true,
-            unique: [true, "this is already exist"]
-        },
-
-        mobile:
-        {
-            type: Number,
-            required: true,
-            maxlength: 11,
-        },
-
-
-        persionalDetails: {
-
+      
+            firstName: String,
+            lastName: String,
             dob: Date,
             gender: String,
             bloodGroup: String,
             country: String,
             maritialStatus: String,
-        },
+            panCard:
+            {
+                type: String 
+            },
+            password:
+            {
+                type: String,
+                required: true
+            },
+            drivingLycence: {
+                type: String
+            },
+            adharNumber: { 
+                type: Number
+            },
+        
 
-        panCard:
-        {
-            type: String 
-        },
-
-        drivingLycence: {
-            type: String
-        },
-
-        adharNumber: { 
-            type: Number
-        },
- 
-        Address: {
+       
+            mobile:
+            {
+                type: Number,
+                required: true,
+                maxlength: 11,
+            },
+            workPhone:Number,
+            email:
+            {
+                type: String,
+                required: true,
+                unique: [true, "this is already exist"]
+            },
+            Linkedin: {
+                type: String
+            },
+            skypeId:{
+                type:String
+            },
             permanantAdd: String,
-            currentAdd: String
-        },
+            currentAdd: String,
+  
 
-        Linkedin: {
-            type: String
-        },
-
-
-        empCode:
-        {
-            type: String,
-        },
-        role:
-        {
-            roleId: String,
-            roleName: String
-        },
-        department:
-        {
-            departmentId: String,
-            departmentName: String
-        },
         isLoggedIn: Boolean,
-        status:
+
+      /*  status:
         {
             type: Boolean,
             required: true
         },
-
+        */
+ 
         FCMToken: String,
 
         created:
@@ -101,17 +80,18 @@ var userSchema = mongoose.Schema(
         },
         lastUpdated:
         {
-            type: Date
+            type: Date,
+            default:Date.now
         },
         createdBy:
         {
             type: String,
-            required: true
+            //required: true
         },
         lastUpdatedBy:
         {
             type: String,
-            required: true
+            //required: true
         }
     }
 );

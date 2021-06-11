@@ -40,17 +40,7 @@ router.post("/", (req, res, next) => {
   taskService.getTaskByUserName(req.body.userName, (err, result) => {
     if (err) {
       res.status(500).send(err);
-    } else {
-      if (result.length > 0) {
-        console.log(JSON.stringify(result));
-        taskService.updateTask(result[0]._id, req.body, (err, result) => {
-          if (err) {
-            res.json(err);
-          } else {
-            res.json(result);
-          }
-        });
-      } else {
+    }  else {
         taskService.postTask(req.body, (err, result) => {
           if (err) {
             res.json(err);
@@ -59,9 +49,9 @@ router.post("/", (req, res, next) => {
           }
         });
       }
-    }
+    })
   });
-});
+
 
 
 //patch update task

@@ -42,17 +42,7 @@ router.post("/", (req, res, next) => {
     policyService.getPolicyByUserName(req.body.userName, (err, result) => {
       if (err) {
         res.status(500).send(err);
-      } else {
-        if (result.length > 0) {
-          console.log(JSON.stringify(result));
-          policyService.patchPolicy(result[0]._id, req.body, (err, result) => {
-            if (err) {
-              res.json(err);
-            } else {
-              res.json(result);
-            }
-          });
-        } else {
+      }  else {
           policyService.postPolicy(req.body, (err, result) => {
             if (err) {
               res.json(err);
@@ -61,9 +51,9 @@ router.post("/", (req, res, next) => {
             }
           });
         }
-      }
+      })
     });
-  });
+  
   
 
 

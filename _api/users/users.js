@@ -11,11 +11,11 @@ router.get("/", function (req, res, next) {
       if (err) {
         res.status(500).send(err);
       } else {
-        res.send({ Users: result });
+        res.send( result );
       }
     });
   } else {
-    userService.getUsers("users", function (err, results) {
+    userService.getUsers("user", function (err, results) {
       if (err) {
         res.header("Access-Control-Allow-Origin", "*");
         res.header(
@@ -29,7 +29,7 @@ router.get("/", function (req, res, next) {
           "Access-Control-Allow-Headers",
           "Origin, X-Requested-With, Content-Type, Accept"
         );
-        res.send({ users: results });
+        res.send( results );
       }
     });
   }
@@ -51,17 +51,7 @@ router.post("/", (req, res, next) => {
   userService.getUserByUserName(req.body.userName, (err, result) => {
     if (err) {
       res.status(500).send(err);
-    } else {
-      if (result.length > 0) {
-        console.log(JSON.stringify(result));
-        userService.patchUser(result[0]._id, req.body, (err, result) => {
-          if (err) {
-            res.json(err);
-          } else {
-            res.json(result);
-          }
-        });
-      } else {
+    }else {
         userService.postUser(req.body, (err, result) => {
           if (err) {
             res.json(err);
@@ -70,9 +60,8 @@ router.post("/", (req, res, next) => {
           }
         });
       }
-    }
+    })
   });
-});
 
 
 
