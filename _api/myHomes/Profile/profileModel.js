@@ -34,6 +34,10 @@ var profileSchema=mongoose.Schema(
             type:String,
             required:true
         },
+        reportManeger:{
+            type:String,
+            required:true
+        },
         doj:{
             type:Date,
             required:true

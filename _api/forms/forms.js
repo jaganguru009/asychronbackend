@@ -42,16 +42,6 @@ router.post("/", (req, res, next) => {
       if (err) {
         res.status(500).send(err);
       } else {
-        if (result.length > 0) {
-          console.log(JSON.stringify(result));
-          formService.patchForm(result[0]._id, req.body, (err, result) => {
-            if (err) {
-              res.json(err);
-            } else {
-              res.json(result);
-            }
-          });
-        } else {
           formService.postForm(req.body, (err, result) => {
             if (err) {
               res.json(err);
@@ -60,9 +50,8 @@ router.post("/", (req, res, next) => {
             }
           });
         }
-      }
+      })
     });
-  });
   
 
 

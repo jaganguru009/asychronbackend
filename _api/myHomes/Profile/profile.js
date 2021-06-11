@@ -54,17 +54,7 @@ router.post("/", (req, res, next) => {
   profileService.getProfileByUserName(req.body.userName, (err, result) => {
     if (err) {
       res.status(500).send(err);
-    } else {
-      if (result.length > 0) {
-        console.log(JSON.stringify(result));
-        profileService.patchProfile(result[0]._id, req.body, (err, result) => {
-          if (err) {
-            res.json(err);
-          } else {
-            res.json(result);
-          }
-        });
-      } else {
+    }  else {
         profileService.postProfile(req.body, (err, result) => {
           if (err) {
             res.json(err);
@@ -73,9 +63,11 @@ router.post("/", (req, res, next) => {
           }
         });
       }
-    }
-  });
-});
+    })
+  })
+
+  
+
 
 //update (patch ) profile
 router.patch("/:id", (req, res, next) => {
