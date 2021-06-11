@@ -11,7 +11,8 @@ exports.getUsers = function (queryString, callback) {
       return;
     } else {
       // send the list of all people
-      callback(null, results);
+      let usersJson={"users":results}
+      callback(null, usersJson);
       return;
     }
   });
