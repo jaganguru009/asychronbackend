@@ -64,6 +64,16 @@ exports.getAssetByUserName =  (userName, callback) =>{
 exports.postAsset = (asset, callback) => {
     assetModel.create(asset, (err, createdAsset) => {
         if (err) {
+
+            if (err.code === 11000) {
+
+                err = {
+                    "errType": "duplicate entry"
+                }
+
+                callback(null, err);
+                return;
+            }
             callback(null, err);
             return;
 

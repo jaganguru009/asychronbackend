@@ -61,6 +61,8 @@ exports.postProfile = (profile, callback) => {
                 err = {
                     "errtype": "duplicate Profile"
                 }
+                callback(null,err);
+                return;
             }
             callback(null, err);
             return;

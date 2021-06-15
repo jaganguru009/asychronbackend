@@ -20,6 +20,8 @@ router.use('/families',require('./myHomes/Family/family'));
 router.use('/educations',require('./myHomes/Education/education'));
 router.use('/referances',require('./myHomes/Referance/referance'));
 router.use('/certificates',require('./myHomes/Certificate/certificate'));
+router.use('/polls',require('./Polls/poll'));
+
 
 
 

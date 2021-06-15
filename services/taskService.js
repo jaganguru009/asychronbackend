@@ -62,6 +62,8 @@ exports.postTask = (task, callback) => {
         err = {
           errorType: "already assigned  this task ",
         };
+        callback(null, err);
+        return;
       }
       callback(null, err);
       return;

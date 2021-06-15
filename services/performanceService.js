@@ -38,7 +38,7 @@ exports.getPerformanceById = (id, callback) => {
     }
   });
 };
-// performance by userName 
+// performance by userName
 exports.getPerformanceByUserName = (userName, callback) => {
   performanceModel
     .find()
@@ -64,7 +64,6 @@ exports.postPerformance = (performance, callback) => {
         err = {
           errType: "duplicate entry",
         };
-
         callback(null, err);
         return;
       } else {

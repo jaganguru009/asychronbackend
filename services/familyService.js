@@ -72,6 +72,8 @@ exports.postFamily = (family, callback) => {
                 callback(null, err);
                 return;
             }
+            callback(null,err);
+            return;  
          } else {
                 callback(null, createdFamily);
                 return;
