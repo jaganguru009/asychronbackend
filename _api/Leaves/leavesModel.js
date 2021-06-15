@@ -6,10 +6,9 @@ var leavesSchema=mongoose.Schema(
             type:String,
             required:true
         },
-        leavesPeriod:{
-            type:String, 
-            required:true
-        },
+        leaveFrom:Date,
+        leaveTo:Date,
+        status:String,     
         reason:{
             type:String,
             required:true

@@ -86,7 +86,7 @@ exports.patchCertificate = (id, cert, callback) => {
         result.name = cert.name || result.name;
         result.description = cert.description || result.description;
         result.typeCertificate = cert.typeCertificate || result.typeCertificate;
-
+        result.updatedOn = result.updatedOn || result.updatedOn 
         result.save((err, result) => {
           if (err) {
             callback(null, err);
