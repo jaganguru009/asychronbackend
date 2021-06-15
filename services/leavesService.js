@@ -91,8 +91,10 @@ exports.patchLeave = (id, leave, callback) => {
     } else {
       if (result != null) {
         result.leavesType = leave.leavesType || result.leavesType;
-        result.leavesPeriod = leave.leavesPeriod || result.leavesPeriod;
         result.reason = leave.reason || result.reason;
+        result.leaveFrom = leave.leaveFrom || result.leaveFrom;
+        result.leaveTo = leave.leaveTo || result.leaveTo;
+        result.status = leave.status || result.status;
 
         //save updated info data in db
         result.save((err, result) => {
