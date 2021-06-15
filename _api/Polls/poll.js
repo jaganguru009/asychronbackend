@@ -2,7 +2,7 @@ var express = require('express');
 var router =  express.Router();
 var appRoot = require('app-root-path');
 const { request } = require('express');
-var pollService = require(app +"/services/pollService");
+var pollService = require(appRoot +"/services/pollService");
 
 //get poll
 router.get("/",(req,res,next)=>{
@@ -64,6 +64,7 @@ router.patch("/:id",(req,res,next)=>{
             res.json(err);
         }else{
             res.json(result);
+            console.log("success");
         }
     })
 })
@@ -79,3 +80,5 @@ router.delete("/:id",(req,res,next)=>{
     })
 
 })
+
+module.exports = router;

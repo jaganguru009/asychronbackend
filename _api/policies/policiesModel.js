@@ -1,11 +1,9 @@
-var mongoose =require("mongoose")
+var mongoose = require("mongoose");
 
-var policiesSchema=mongoose.Schema(
-    {
-        userName:String,
-        name:String,
-        hrPolicies:String
-     }
-)
+var policiesSchema = mongoose.Schema({
+  userName: String,
+  name: String,
+  hrPolicies: String,
+});
 
-var Policy=module.exports=mongoose.model("policies",policiesSchema);
+var Policy = (module.exports = mongoose.model("policies", policiesSchema));

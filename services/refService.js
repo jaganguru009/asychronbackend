@@ -1,4 +1,5 @@
 var appRoot = require("app-root-path");
+const { response } = require("express");
 var refModel = require(appRoot + "/_api/myHomes/Referance/refModel");
 
 //get all refernaces
@@ -53,22 +54,33 @@ exports.getRefByUserName = (userName, callback) => {
 };
 
 //post ref
+
 exports.postRef = (refernce, callback) => {
   refModel.create(refernce, (err, createdRef) => {
-    if (err) {
-      if (err.code === 11000) {
-        err = {
-          errorType: "duplicate entry .....already exit data",
-        };
+      if (err) {
+          if (err.code ===11000) {
+              let err={
+                  msg: "duplicate entry of data "
+              }
+              callback(null, err);
+              return;
+          }
+          callback(null,err);
+          return;
+         
+      } else {
+          callback(null, createdRef);
+          return;
       }
-      callback(null, err);
-      return;
-    } else {
-      callback(null, createdRef);
-      return;
-    }
-  });
-};
+  })
+
+}
+
+
+
+
+
+
 
 //update refernce
 exports.patchRef = (id, ref, callback) => {

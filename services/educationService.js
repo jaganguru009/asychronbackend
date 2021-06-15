@@ -65,11 +65,12 @@ exports.postEduDetail = (edudetail, callback) => {
                 callback(null, response);
                 return;
             }
+            callback(null,err);
+            return;
            
-
         } else {
-            callback(null, createdEdu)
-
+            callback(null, createdEdu);
+            return;
         }
     })
 

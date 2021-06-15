@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 
 var refSchema = mongoose.Schema({
   userName: String,
+
   refId: {
     type: String 
   },
@@ -10,5 +11,7 @@ var refSchema = mongoose.Schema({
   email: String,
   mobile: Number,
   company: String,
+
+  
 });
 var Refernces = (module.exports = mongoose.model("refernces", refSchema));

@@ -67,6 +67,8 @@ exports.postUser = function (user, callback) {
           errorType: "Duplicate UserName",
           errorText: "Same user name is available in the database,try new one",
         };
+        callback(null,errCustom);
+        return;
       }
       callback(null, err);
       return;
