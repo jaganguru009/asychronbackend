@@ -112,7 +112,7 @@ exports.deleteCert = (id, callback) => {
         let response = {
           msg: "No Certificate found for delete",
         };
-        callback(null, err);
+        callback(null, response);
         return;
       } else {
         let response = {

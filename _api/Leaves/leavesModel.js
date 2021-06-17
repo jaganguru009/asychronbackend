@@ -8,7 +8,10 @@ var leavesSchema=mongoose.Schema(
         },
         leaveFrom:Date,
         leaveTo:Date,
-        status:String,     
+        status:{
+            type:String,
+            default:"pending"
+        },     
         reason:{
             type:String,
             required:true
