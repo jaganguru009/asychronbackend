@@ -138,6 +138,12 @@ exports.patchTimesheet=(id,Timesheet,callback)=>{
         })
 
 
+            }else{
+                let response={
+                    msg:"No data for update"
+                }
+                callback(null,response);
+                return;
             }
 
         }

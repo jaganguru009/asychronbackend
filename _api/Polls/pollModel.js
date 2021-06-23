@@ -2,26 +2,20 @@ var mongoose = require("mongoose");
 
 var pollSchema = mongoose.Schema({
 
-    pollTitle: {
-    type: String,
-    required: true,
+	userName:String,
+	pollTitle:String,
+	initiatedBy:String,
+	priority:String,
+	status:{
+    type:String,
+    default:'pending'
   },
-  initiatedBy: {
-    type: String,
-    required: true,
-  },
-  priority: {
-    type: String,
-    required: true,
-  },
-  status: {
-    type: String,
-    required: true,
-  },
-  userName:{
-      type:String,
-      required:true
-  }
+	question:String,
+	createdBy:String,
+	voteType: String,
+	options:[],
+	vote: Number,
+	type: String
   
 });
 

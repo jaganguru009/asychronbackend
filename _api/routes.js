@@ -22,6 +22,7 @@ router.use('/referances',require('./myHomes/Referance/referance'));
 router.use('/certificates',require('./myHomes/Certificate/certificate'));
 router.use('/polls',require('./Polls/poll'));
 router.use('/timesheets',require('./Timesheet/timesheet'));
+router.use('/salaryDetails',require('./salDetail/salDetails'));
 
 
 
