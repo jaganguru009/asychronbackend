@@ -88,6 +88,14 @@ exports.patchPoll = (id, poll, callback) => {
         result.initiatedBy = poll.initiatedBy || result.initiatedBy;
         result.priority = poll.priority || result.priority;
         result.status = poll.status || result.status;
+        result.question = poll.question || result.question;
+        result.createdBy = poll.createdBy || result.createdBy;
+        result.voteType = poll.voteType || result.voteType;
+        result.vote = poll.vote || result.vote;
+        result.type = poll.type || result.type;
+        result.options = poll.options || result.options;
+        
+  
 
         result.save((err, result) => {
           if (err) {
