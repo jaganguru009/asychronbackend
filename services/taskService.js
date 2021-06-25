@@ -110,14 +110,11 @@ exports.updateTask = (id, task, callback) => {
       return;
     } else {
       if (result != null) {
-        result.taskId = task.taskId || result.taskId;
         result.description = task.description || result.description;
         result.title = task.title || result.title;
-        result.dueTo = task.dueTo || result.dueTo;
+        result.dueDate = task.dueDate || result.dueDate;
         result.priority = task.priority || result.priority;
-        result.toDo = task.toDo || result.toDo;
-        result.technicalReview = task.technicalReview || result.technicalReview;
-        result.deployedStatus = task.deployedStatus || result.deployedStatus;
+        result.status = task.status || result.status;
 
         //save data in db
         result.save((err, result) => {

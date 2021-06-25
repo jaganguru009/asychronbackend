@@ -85,6 +85,7 @@ exports.patchPoll = (id, poll, callback) => {
     } else {
       if (result != null) {
         result.pollTitle = poll.pollTitle || result.pollTitle;
+        result.respondedBy = poll.respondedBy || result.respondedBy
         result.initiatedBy = poll.initiatedBy || result.initiatedBy;
         result.priority = poll.priority || result.priority;
         result.status = poll.status || result.status;
