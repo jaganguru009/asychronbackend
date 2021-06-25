@@ -3,15 +3,13 @@ var mongoose = require("mongoose")
 var taskSchema = mongoose.Schema(
     {   
         userName:String,
-        taskId: Number,
         description: String,
         title: String,
-        dueTo: String,
+        dueDate:Date,
         priority: String,
-        toDo: String,
-        technicalReview: String,
-        deployedStatus: Boolean,
-
+        status:String
+    },{
+        //timestamps:true
     }
 )
  
