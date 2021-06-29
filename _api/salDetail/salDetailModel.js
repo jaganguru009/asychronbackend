@@ -13,7 +13,23 @@ var salDetailSchema = mongoose.Schema({
     leaveWithouPay:Number,
     noWorkingDays:Number,
     TotalWorkDays:Number,
-    Earnings:String,
+    Earnings:{
+        basicSal:Number,
+        houseRent:Number,
+        ConveyanceAllow:Number,
+        medical:Number,
+        lTa:Number,
+        specialPay1:Number,
+        specialPay2:Number,
+        cityCompensantoryAllow:Number,
+        otherEar:Number,
+        quarterlyPerformanceBonus:Number
+    },
+       deduction:{ profTax:Number,
+        incomeTax:Number,
+        otherDedu:Number
+       },
+    
     amountA:Number,
 
     deduction:String,
