@@ -92,17 +92,33 @@ exports.patchSal=(id,salDetail,callback)=>{
     result.panCard = salDetail.panCard || result.salDetail;
     result.leaveBal = salDetail.leaveBal || result.leaveBal;
 
-    result.leaveWithouPay = salDetail.leaveWithouPay || result.leaveWithouPay;
+    result.leaveWithoutPay = salDetail.leaveWithoutPay || result.leaveWithoutPay;
     result.noWorkingDays = salDetail.noWorkingDays || result.noWorkingDays;
-    result.TotalWorkDays = salDetail.TotalWorkDays || result.TotalWorkDays;
+    result.totalWorkDays = salDetail.totalWorkDays || result.totalWorkDays;
     result.Earnings = salDetail.Earnings || result.Earnings;
     result.amountA = salDetail.amountA || result.amountA;
 
     result.deduction = salDetail.deduction || result.deduction;
     result.amountB = salDetail.amountB || result.amountB;
-    result.TotalA = salDetail.TotalA || result.TotalA;
+    result.totalA = salDetail.totalA || result.totalA;
     result.netPay = salDetail.netPay || result.netPay;
-    result.TotalB = salDetail.TotalB || result.TotalB ;
+    result.totalB = salDetail.totalB || result.totalB ;
+
+    result.basicSal = salDetail.basicSal || result.basicSal;
+    result.houseRent =salDetail.houseRent || result.houseRent;
+    result.ConveyanceAllow = salDetail.ConveyanceAllow ||result.ConveyanceAllow;
+    result.medical = salDetail.medical || result.medical;
+    result.lTa = salDetail.lTa || result.lTa;
+    result.specialPay1 = salDetail.specialPay1 || result.specialPay1;
+    result.specialPay2 = salDetail.specialPay2 || result.specialPay2;
+    result.cityCompensantoryAllow = salDetail.cityCompensantoryAllow || result.cityCompensantoryAllow;
+    result.otherEar =salDetail.otherEar || result.otherEar;
+    result.quarterlyPerformanceBonus = salDetail.quarterlyPerformanceBonus || result.quarterlyPerformanceBonus;
+
+   result.profTax = salDetail.profTax || result.profTax;
+    result.incomeTax = salDetail.incomeTax || result.incomeTax;
+    result.otherDedu = salDetail.otherDedu || result.otherDedu;
+
 
     result.taxDetails = salDetail.taxDetails || result.taxDetails;
     result.form = salDetail.form || result.form;

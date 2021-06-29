@@ -116,7 +116,7 @@ exports.updateTask = (id, task, callback) => {
         result.priority = task.priority || result.priority;
         result.status = task.status || result.status;
 
-        //save data in db
+        //save data in db 
         result.save((err, result) => {
           if (err) {
             callback(null, err);
