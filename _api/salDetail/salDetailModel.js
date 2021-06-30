@@ -11,9 +11,8 @@ var salDetailSchema = mongoose.Schema({
     leaveBal:Number,
 
     leaveWithoutPay: Number,
-    noWorkingDaysPaid: Number,
+    noWorkingDays: Number,
     totalWorkDays: Number,
-    
    
           basicSal: Number,
           houseRent: Number,

@@ -26,6 +26,7 @@ router.use('/salaryDetails',require('./salDetail/salDetails'));
 router.use('/events',require('./Events/events'));
 router.use('/holidays',require('./Holidays/holiday'));
 router.use('/news',require('./News/news'));
+router.use('/calenderDetails',require('./calender/calender'));
 
 
 
