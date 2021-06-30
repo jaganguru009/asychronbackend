@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-require('mongoose-type-url');
+//require('mongoose-type-url');
 
 var salDetailSchema = mongoose.Schema({
 
@@ -10,40 +10,40 @@ var salDetailSchema = mongoose.Schema({
     panCard:String,
     leaveBal:Number,
 
-    leaveWithouPay:Number,
-    noWorkingDays:Number,
-    TotalWorkDays:Number,
-    Earnings:{
-        basicSal:Number,
-        houseRent:Number,
-        ConveyanceAllow:Number,
-        medical:Number,
-        lTa:Number,
-        specialPay1:Number,
-        specialPay2:Number,
-        cityCompensantoryAllow:Number,
-        otherEar:Number,
-        quarterlyPerformanceBonus:Number
-    },
-       deduction:{ profTax:Number,
-        incomeTax:Number,
-        otherDedu:Number
-       },
+    leaveWithoutPay: Number,
+    noWorkingDaysPaid: Number,
+    totalWorkDays: Number,
+    
+   
+          basicSal: Number,
+          houseRent: Number,
+          ConveyanceAllow: Number,
+          medical: Number,
+          lTa: Number,
+          specialPay1: Number,
+          specialPay2: Number,
+          cityCompensantoryAllow: Number,
+          otherEar: Number,
+          quarterlyPerformanceBonus:Number,
+ 
+          profTax:Number,
+          incomeTax: Number,
+          otherDedu:Number,
+     
     
     amountA:Number,
-
-    deduction:String,
     amountB:Number,
-    TotalA:Number,
+    totalA:Number,
     netPay:Number,
-    TotalB:Number,
+    totalB:Number,
 
-    taxDetails:{
+   /* taxDetails:{
         type:mongoose.SchemaTypes.Url
     },
     form:{
         type:mongoose.SchemaTypes.Url
     }
+    */
     
 
 

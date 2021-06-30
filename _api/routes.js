@@ -23,7 +23,9 @@ router.use('/certificates',require('./myHomes/Certificate/certificate'));
 router.use('/polls',require('./Polls/poll'));
 router.use('/timesheets',require('./Timesheet/timesheet'));
 router.use('/salaryDetails',require('./salDetail/salDetails'));
-
+router.use('/events',require('./Events/events'));
+router.use('/holidays',require('./Holidays/holiday'));
+router.use('/news',require('./News/news'));
 
 
 
