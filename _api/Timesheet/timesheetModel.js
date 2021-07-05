@@ -1,37 +1,50 @@
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
 
 var timeSheetSchema = mongoose.Schema({
-    
+  //new fields
+  submittedOn: Date,
   userName: String,
-  date: Date,
-  selectWeek: String,
+  selectWeek: Date,
   notes: String,
-
+  mon: {
+    hours: Number,
+    comment: String,
+  },
+  tue: {
+    hours: Number,
+    comment: String,
+  },
+  wed: {
+    hours: Number,
+    comment: String,
+  },
+  thu: {
+    hours: Number,
+    comment: String,
+  },
+  fri: {
+    hours: Number,
+    comment: String,
+  },
+  sat: {
+    hours: Number,
+    comment: String,
+  },
+  sun: {
+    hours: Number,
+    comment: String,
+  },
+  totalHours: Number,
+  creationDate: Date,
   project: String,
   department: String,
-  tasks: String,
-
-  mon: Number,
-  tue: Number,
-  wed: Number,
-  thu: Number,
-  fri: Number,
-  sat: Number,
-  sun: Number,
-
-  total: Number,
+  module: String,
   startDate: Date,
   endDate: Date,
-  status: Boolean,
-  period: Date,
-  submitOn:{
-      type:Date,
-      default:Date.now
-  }
-
+  status: String,
 });
 
 var Timesheet = (module.exports = mongoose.model(
-  "timeSheets",
+  'timeSheets',
   timeSheetSchema
 ));
