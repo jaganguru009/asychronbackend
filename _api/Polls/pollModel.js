@@ -16,7 +16,9 @@ var pollSchema = mongoose.Schema({
 	voteType: String,
 	options:[],
 	vote: String,
-	type: String
+	type: String ,
+	startDate:Date,
+	endDate:Date
   
 });
 
