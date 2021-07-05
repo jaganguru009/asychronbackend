@@ -95,7 +95,8 @@ exports.patchPoll = (id, poll, callback) => {
         result.vote = poll.vote || result.vote;
         result.type = poll.type || result.type;
         result.options = poll.options || result.options;
-        
+        result.startDate = poll.startDate || result.startDate;
+        result.endDate = poll.endDate || result.endDate
   
 
         result.save((err, result) => {
