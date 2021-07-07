@@ -1,7 +1,7 @@
-var appRoot = require("app-root-path");
-const { response } = require("express");
-const e = require("express");
-var pollModel = require(appRoot + "/_api/Polls/pollModel");
+var appRoot = require('app-root-path');
+const {response} = require('express');
+const e = require('express');
+var pollModel = require(appRoot + '/_api/Polls/pollModel');
 
 // get polls
 exports.getPoll = (querystring, callback) => {
@@ -25,7 +25,7 @@ exports.getPollById = (id, callback) => {
     } else {
       if (poll == null) {
         var response = {
-          msg: "no poll found",
+          msg: 'no poll found',
         };
         callback(null, response);
         return;
@@ -37,11 +37,28 @@ exports.getPollById = (id, callback) => {
   });
 };
 
+// get polls template by admin
+exports.getPollByTemplate = (template, callback) => {
+  pollModel
+    .find()
+    .where('type')
+    .equals('template')
+    .exec((err, template) => {
+      if (err) {
+        callback(null, err);
+        return;
+      } else {
+        callback(null, template);
+        return;
+      }
+    });
+};
+
 // get bby userName
 exports.getPollByUserName = (userName, callback) => {
   pollModel
     .find()
-    .where("userName")
+    .where('userName')
     .equals(userName)
     .exec((err, polls) => {
       if (err) {
@@ -61,7 +78,7 @@ exports.postPoll = (poll, callback) => {
     if (err) {
       if (err.code === 11000) {
         err = {
-          errorType: "duplicate poll entry",
+          errorType: 'duplicate poll entry',
         };
         callback(null, err);
         return;
@@ -77,7 +94,7 @@ exports.postPoll = (poll, callback) => {
 
 //patch details
 exports.patchPoll = (id, poll, callback) => {
-  console.log("id=" + id);
+  console.log('id=' + id);
   pollModel.findById(id, (err, result) => {
     if (err) {
       callback(null, err);
@@ -85,7 +102,7 @@ exports.patchPoll = (id, poll, callback) => {
     } else {
       if (result != null) {
         result.pollTitle = poll.pollTitle || result.pollTitle;
-        result.respondedBy = poll.respondedBy || result.respondedBy
+        result.respondedBy = poll.respondedBy || result.respondedBy;
         result.initiatedBy = poll.initiatedBy || result.initiatedBy;
         result.priority = poll.priority || result.priority;
         result.status = poll.status || result.status;
@@ -96,8 +113,8 @@ exports.patchPoll = (id, poll, callback) => {
         result.type = poll.type || result.type;
         result.options = poll.options || result.options;
         result.startDate = poll.startDate || result.startDate;
-        result.endDate = poll.endDate || result.endDate
-  
+        result.endDate = poll.endDate || result.endDate;
+        result.isSubmitted = poll.isSubmitted || result.isSubmitted;
 
         result.save((err, result) => {
           if (err) {
@@ -109,7 +126,7 @@ exports.patchPoll = (id, poll, callback) => {
           }
         });
       } else {
-        let errormsg = { err: "poll not found" };
+        let errormsg = {err: 'poll not found'};
         callback(null, errormsg);
         return;
       }
@@ -125,12 +142,12 @@ exports.deletePoll = (id, callback) => {
       return;
     } else {
       if (result == null) {
-        let response = { msg: "No polls found " };
+        let response = {msg: 'No polls found '};
         callback(null, response);
         return;
       } else {
         let response = {
-          msg: "succesfully deleted ",
+          msg: 'succesfully deleted ',
           id: result._id,
         };
         callback(null, response);
