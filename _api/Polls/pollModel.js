@@ -19,6 +19,7 @@ var pollSchema = mongoose.Schema({
   startDate: Date,
   endDate: Date,
   isSubmitted: Boolean,
+  templateId: String,
 });
 
 var Poll = (module.exports = mongoose.model('polls', pollSchema));
