@@ -1,5 +1,5 @@
 var appRoot = require('app-root-path');
-const {response} = require('express');
+const {response, request} = require('express');
 const e = require('express');
 var pollModel = require(appRoot + '/_api/Polls/pollModel');
 
@@ -38,7 +38,7 @@ exports.getPollById = (id, callback) => {
 };
 
 // get polls template by admin
-exports.getPollByTemplate = (template, callback) => {
+exports.getPollByTemplate = (querystring, callback) => {
   pollModel
     .find()
     .where('type')
@@ -115,6 +115,7 @@ exports.patchPoll = (id, poll, callback) => {
         result.startDate = poll.startDate || result.startDate;
         result.endDate = poll.endDate || result.endDate;
         result.isSubmitted = poll.isSubmitted || result.isSubmitted;
+        result.templateId = poll.templateId || result.templateId;
 
         result.save((err, result) => {
           if (err) {

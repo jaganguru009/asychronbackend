@@ -7,7 +7,7 @@ var pollService = require(appRoot + '/services/pollService');
 //get poll template
 
 router.get('/', (req, res, next) => {
-  var template = req.query.type;
+  var template = req.query.requestFrom;
   if (template != undefined) {
     pollService.getPollByTemplate('template', (err, result) => {
       if (err) {
