@@ -50,6 +50,6 @@ router.use(
 );
 
 //triel for sending mail
-router.use("/sendEmail", require("../shared/sendEmail"));
+//router.use("/sendEmail", require("../shared/sendEmail"));
 
 module.exports = router;
